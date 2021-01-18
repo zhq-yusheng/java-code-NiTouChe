@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yu.feiqian.mapper.QueryStudentSevenMapper">
+    <select id="queryJZT" parameterType="com.yu.feiqian.pojo.query" resultType="com.yu.feiqian.view.Jview">
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c1}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c2}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c3}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c4}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c5}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c6}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '早退' AND sStime LIKE #{c7};
+    </select>
+    <select id="queryJCD" parameterType="com.yu.feiqian.pojo.query" resultType="com.yu.feiqian.view.Jview">
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c1}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c2}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c3}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c4}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c5}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c6}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '迟到' AND sStime LIKE #{c7};
+    </select>
+    <select id="queryJZC" parameterType="com.yu.feiqian.pojo.query" resultType="com.yu.feiqian.view.Jview">
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c1}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c2}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c3}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c4}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c5}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c6}
+UNION ALL
+SELECT COUNT(*)AS 'rs' FROM tblesmp WHERE CODE = '正常' AND sStime LIKE #{c7};
+    </select>
+
+</mapper>
