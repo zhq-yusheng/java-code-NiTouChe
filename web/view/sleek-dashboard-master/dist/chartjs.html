@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
+  <script src="https://cdn.staticfile.org/echarts/5.0.0/echarts.min.js"></script>
+  <script src="./assets/js/data.js"></script>
+  <title>飞签控制台</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
+  <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
+
+
+  <!-- PLUGINS CSS STYLE -->
+  <link href="assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
+
+  
+  
+  <!-- No Extra plugin used -->
+  
+  
+
+  <!-- SLEEK CSS -->
+  <link id="sleek-css" rel="stylesheet" href="assets/css/sleek.css" />
+
+  <!-- FAVICON -->
+  <link href="assets/img/home.ico" rel="shortcut icon" />
+
+  
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="assets/plugins/nprogress/nprogress.js"></script>
+    <script src="../dist/assets/js/axios.min.js"></script>
+
+</head>
+
+
+<body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
+  
+  <script>
+    NProgress.configure({ showSpinner: false });
+    NProgress.start();
+  </script>
+
+  
+
+  <div class="wrapper">
+    
+    
+
+            <!--
+          ====================================
+          ——— LEFT SIDEBAR WITH FOOTER
+          =====================================
+        -->
+        <aside class="left-sidebar bg-sidebar">
+          <div id="sidebar" class="sidebar sidebar-with-footer">
+            <!-- Aplication Brand -->
+            <div class="app-brand">
+              <a href="#" title="飞签控制台">
+               <img src="assets/img/home.ico" style="width: 35px;">
+                <span class="brand-name text-truncate">控制台</span>
+              </a>
+            </div>
+            <!-- begin sidebar scrollbar -->
+            <div class="sidebar-scrollbar">
+
+              <!-- sidebar menu -->
+              <ul class="nav sidebar-inner" id="sidebar-menu">
+                
+
+                
+                <li  class="has-sub" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
+                    aria-expanded="false" aria-controls="dashboard">
+                    <i class="mdi mdi-view-dashboard-outline"></i>
+                    <span class="nav-text">概览</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse"  id="dashboard"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      
+                      
+                        
+                          <li >
+                            <a class="sidenav-item-link" href="index.html">
+                              <span class="nav-text">总体概览</span>
+                              
+                            </a>
+                          </li>
+                        
+                      
+
+                      
+                      
+                        
+                          <li >
+                            <a class="sidenav-item-link" href="analytics.html">
+                              <span class="nav-text">详细概览</span>
+                              
+                              <span class="badge badge-success">new</span>
+                              
+                            </a>
+                          </li>
+                        
+                      
+
+                      
+                    </div>
+                  </ul>
+                </li>
+              
+
+                    
+
+              
+
+              
+                <li  class="has-sub active expand" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
+                    aria-expanded="false" aria-controls="charts">
+                    <i class="mdi mdi-chart-pie"></i>
+                    <span class="nav-text">视图</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse show"  id="charts"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      
+                      
+                        
+                          <li class="active" >
+                            <a class="sidenav-item-link" href="chartjs.html">
+                              <span class="nav-text">综合视图</span>
+                              
+                            </a>
+                          </li>
+                        
+                      
+
+                      
+                    </div>
+                  </ul>
+                </li>
+              
+
+              
+
+              
+            </ul>
+
+            </div>
+
+          
+          </div>
+        </aside>
+
+
+    <div class="page-wrapper">
+                <!-- Header -->
+          <header class="main-header " id="header">
+            <nav class="navbar navbar-static-top navbar-expand-lg" style="padding-right: 0rem;">
+              <!-- Sidebar toggle button -->
+              <button id="sidebar-toggler" class="sidebar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <!-- search form -->
+              <div class="search-form d-none d-lg-inline-block">
+               
+              </div>
+
+              <div class="navbar-right ">
+                <ul class="nav navbar-nav">
+                  
+                  <li class="right-sidebar-in right-sidebar-2-menu">
+                    <i class="mdi mdi-settings mdi-spin"></i>
+                  </li>
+                  <!-- User Account -->
+                  <li class="dropdown user-menu">
+                    <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                      <img src="assets/img/user/user copy.png" class="user-image" alt="User Image" />
+                      <span class="d-none d-lg-inline-block">Admin</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <!-- User image -->
+                      <li class="dropdown-header">
+                        <img src="assets/img/user/user copy.png" class="img-circle" alt="User Image" />
+                        <div class="d-inline-block">
+                          Admin<small class="pt-1">williamlincoln@vip.qq.com</small>
+                        </div>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-account"></i> 我的文件
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-email"></i> 消息
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#"> <i class="mdi mdi-diamond-stone"></i> 项目 </a>
+                      </li>
+                      <li class="right-sidebar-in">
+                        <a href="javascript:0"> <i class="mdi mdi-settings"></i> 控制台设置 </a>
+                      </li>
+
+                      <li class="dropdown-footer">
+                        <a href="../../../../login.html"> <i class="mdi mdi-logout"></i> 退出登录 </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+
+          </header>
+
+
+      <div class="content-wrapper">
+        <div class="content">						<div class="row">
+							<div class="col-12">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">近七日签到情况折线图</h2>
+									</div>
+									<div class="card-body" style="height: 450px;">
+                    <!-- <canvas id="linechart" class="chartjs"></canvas> -->
+                    <div id="content4" style="width: 100%; height: 25rem; align-content: center;"></div>
+                      <script type="text/javascript">
+
+                          axios.all([
+
+                              axios.get('http://localhost:8080/feiqian/getJSzc'),
+                              axios.get('http://localhost:8080/feiqian/getJSzt'),
+                              axios.get('http://localhost:8080/feiqian/getJScd')
+
+                          ])
+
+                              .then(axios.spread(function (getzcp7, getztp7, getcdp7) {
+                                  var zcp = getzcp7.data
+                                  var ztp = getztp7.data
+                                  var cdp = getcdp7.data
+
+                                  // 上面两个请求都完成后，才执行这个回调方法
+
+                                  var lines2=echarts.init(document.getElementById('content4'))
+                                  var option4 = {
+                                      title: {
+                                          text: '折线图堆叠'
+                                      },
+                                      tooltip: {
+                                          trigger: 'axis'
+                                      },
+                                      legend: {
+                                          data: ['正常', '迟到', '早退', '旷课']
+                                      },
+                                      grid: {
+                                          left: '3%',
+                                          right: '4%',
+                                          bottom: '3%',
+                                          containLabel: true
+                                      },
+
+                                      xAxis: {
+                                          type: 'category',
+                                          boundaryGap: false,
+                                          data: [zcp[6]["key"],zcp[5]["key"],zcp[4]["key"],zcp[3]["key"],zcp[2]["key"],zcp[1]["key"],zcp[0]["key"]]
+                                      },
+                                      yAxis: {
+                                          type: 'value'
+                                      },
+                                      series: [
+                                          {
+                                              name: '正常',
+                                              type: 'line',
+
+                                              data: [zcp[6]["value"],zcp[5]["value"],zcp[4]["value"],zcp[3]["value"],zcp[2]["value"],zcp[1]["value"],zcp[0]["value"]],
+                                              itemStyle: {
+                                                  normal: {
+                                                      width:4,
+                                                      color: '#28a745',
+                                                      lineStyle:{
+                                                          width:4//设置线条粗细
+                                                      },
+
+                                                  }
+                                              }
+                                          },
+                                          {
+                                              name: '迟到',
+                                              type: 'line',
+                                              data: [cdp[6]["value"],cdp[5]["value"],cdp[4]["value"],cdp[3]["value"],cdp[2]["value"],cdp[1]["value"],cdp[0]["value"]],
+                                              itemStyle: {
+                                                  normal: {
+                                                      width:4,
+                                                      color: '#ffc107',
+                                                      lineStyle:{
+                                                          width:4//设置线条粗细
+                                                      },
+
+                                                  }
+                                              }
+                                          },
+                                          {
+                                              name: '早退',
+                                              type: 'line',
+                                              data: [ztp[6]["value"],ztp[5]["value"],ztp[4]["value"],ztp[3]["value"],ztp[2]["value"],ztp[1]["value"],ztp[0]["value"]],
+                                              itemStyle: {
+                                                  normal: {
+                                                      width:4,
+                                                      color: '#896def',
+                                                      lineStyle:{
+                                                          width:4//设置线条粗细
+                                                      },
+
+                                                  }
+                                              }
+                                          },
+                                          {
+                                              name: '旷课',
+                                              type: 'line',
+                                              data: [1,1,0,0,1,2,1],
+                                              itemStyle: {
+                                                  normal: {
+                                                      width:4,
+                                                      color: 'red',
+                                                      lineStyle:{
+                                                          width:4//设置线条粗细
+                                                      },
+
+                                                  }
+                                              }
+                                          }
+                                      ]
+                                  };
+
+                                  lines2.setOption(option4)
+
+                              }));
+
+
+
+
+
+                      </script>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">近七天签到情况饼图</h2>
+									</div>
+									<div class="card-body" style="height: 400px;">
+                    <!-- <canvas id="dual-line"></canvas> -->
+                    <div id="content5" style="width: 100%; height: 340px; align-content: center;"></div>
+                      <script type="text/javascript">
+                          axios.all([
+
+                              axios.get('http://localhost:8080/feiqian/getJSzc'),
+                              axios.get('http://localhost:8080/feiqian/getJSzt'),
+                              axios.get('http://localhost:8080/feiqian/getJScd')
+
+                          ])
+
+                              .then(axios.spread(function (getzcp7, getztp7, getcdp7) {
+                                  var zcp = getzcp7.data
+                                  var ztp = getztp7.data
+                                  var cdp = getcdp7.data
+
+                                  var pies2=echarts.init(document.getElementById('content5'))
+                      var option5 = {
+                            title: {
+                                
+                                left: 'center'
+                            },
+                            tooltip: {
+                                trigger: 'item',
+                                formatter: '{a} <br/>{b} : {c} ({d}%)'
+                            },
+                            legend: {
+                                
+                                top: 'bottom',
+                                icon:"circle",
+                                data: ['正常', '迟到', '早退', '旷课']
+                            },
+                            
+                            series: [
+                                {
+                                    name: '数据',
+                                    type: 'pie',
+                                    radius: [30, 110],
+                                    center: ['50%', '50%'],
+                                    roseType: 'area',
+                                    data: [
+                                        {value: zcp[6]["key"]+zcp[5]["key"]+zcp[4]["key"]+zcp[3]["key"]+zcp[2]["key"]+zcp[1]["key"]+zcp[0]["key"],name: '正常',itemStyle: { color: '#28a745' }},
+                                        {value: cdp[6]["value"]+cdp[5]["value"]+cdp[4]["value"]+cdp[3]["value"]+cdp[2]["value"]+cdp[1]["value"]+cdp[0]["value"],name: '迟到',itemStyle: { color: '#ffc107' }},
+                                        {value: ztp[6]["value"]+ztp[5]["value"]+ztp[4]["value"]+ztp[3]["value"]+ztp[2]["value"]+ztp[1]["value"]+ztp[0]["value"],name: '早退',itemStyle: { color: '#8061ef' }},
+                                        {value: 4, 说明: '旷课',itemStyle: { color: '#dc3545' }}
+                                    ]
+                                }
+                            ]
+                        };
+
+                              pies2.setOption(option5)
+                              }));</script>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body" style="height: 300px;">
+										<canvas id="area-chart"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="card card-default pb-5">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body" style="height: 300px;">
+										<canvas id="bar3"></canvas>
+										<div id='customLegend' class='customLegend'></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body">
+										<canvas id="activity"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body" style="height: 380px;">
+										<canvas id="mstat"></canvas>
+									</div>
+								</div>
+							</div>
+						
+							<div class="col-12 col-lg-6">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body" style="height: 400px;">
+										<canvas id="polar"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="card card-default">
+									<div class="card-header justify-content-center">
+										<h2 class="text-center">视图</h2>
+									</div>
+									<div class="card-body" style="height: 400px;">
+										<canvas id="radar"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+</div>
+
+        
+
+
+
+      </div>
+
+                <footer class="footer mt-auto">
+            <div class="copyright bg-white">
+              <p>
+                &copy; <span id="copy-year">2019</span> 泥头车科技
+                .
+              </p>
+            </div>
+            <script>
+                var d = new Date();
+                var year = d.getFullYear();
+                document.getElementById("copy-year").innerHTML = year;
+            </script>
+          </footer>
+
+    </div>
+  </div>
+
+  <script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/jekyll-search.min.js"></script>
+
+
+
+<script src="assets/plugins/charts/Chart.min.js"></script>
+  
+
+
+<script src="assets/js/sleek.bundle.js"></script>
+</body>
+
+</html>
